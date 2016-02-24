@@ -77,7 +77,7 @@ root/usr/funcall.c  17:   return i;
 00000054  00000440  SL    0x4 (D 4) # *(local_addr+4) = a，即i--
 00000058  00000154  ADDI  0x1 (D 1) # 由于是i--使用原值进行比较，故此处应将减一后的i加回1
 0000005c  00000086  BNZ   <fwd> # 跳转
-00000060  0000040e  LL    0x4 (D 4)
+00000060  0000040e  LL    0x4 (D 4) #将i赋值给a寄存器，a存储返回值
 00000064  00000802  LEV   0x8 (D 8) #write函数返回
 root/usr/funcall.c  18: }  
 root/usr/funcall.c  19: 
