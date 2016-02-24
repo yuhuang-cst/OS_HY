@@ -87,14 +87,14 @@ root/usr/funcall.c  21: {
 root/usr/funcall.c  22: 
 root/usr/funcall.c  23:   //Change S1/S2 ID to your student ID, and change 12 to new str length
 root/usr/funcall.c  24:   ret = write(1, "201301136\n",12);
-0000006c  00000c9e  PSHI  0xc (D 12)
-00000070  00000008  LEAG  0x0 (D 0)
-00000074  0000009d  PSHA
-00000078  0000019e  PSHI  0x1 (D 1)
-0000007c  ffff9005  JSR   0xffffff90 (TO 0x10)
-00000080  00001801  ENT   0x18 (D 24)
-00000084  00000045  SG    0x0 (D 0)
-root/usr/funcall.c  25:   asm(HALT);
+0000006c  00000c9e  PSHI  0xc (D 12) # 将12压栈
+00000070  00000008  LEAG  0x0 (D 0) # a = pc + 0
+00000074  0000009d  PSHA  # 将a压栈，即字符串地址
+00000078  0000019e  PSHI  0x1 (D 1) #将1压栈
+0000007c  ffff9005  JSR   0xffffff90 (TO 0x10) #调用write函数
+00000080  00001801  ENT   0x18 (D 24) # 函数调用完毕，恢复栈
+00000084  00000045  SG    0x0 (D 0) 
+root/usr/funcall.c  25:   asm(HALT); 
 00000088  00000000  HALT
 root/usr/funcall.c  26: }
 root/usr/funcall.c  27: 
