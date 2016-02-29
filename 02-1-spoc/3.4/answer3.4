@@ -1,0 +1,45 @@
+lab1-ex0.s：
+输出字符串hello world
+
+linux系统调用的编写和含义：
+在lab1-ex0.s中，通过将参数传入eax、ebx、ecx、edx寄存器，最后使用int	$0x80 命令进行系统调用
+系统调用：操作系统向应用程序提供了接口，使得应用程序能够调用操作系统提供的服务，在lab1-ex0.s中，使用了linux的输出服务
+
+objdump：
+对生成的可执行文件进行反汇编，生成汇编代码。可以看到lab1-0x0.out进行系统调用的复杂过程。
+
+nm：
+输出可执行文件的符号信息，符号信息可以是函数名、变量名等。以下为执行nm lab1-ex0.out的部分输出：
+00000002 a AF_INET
+0804a040 B __bss_start
+0804a040 b completed.7181
+0804a014 D __data_start
+0804a014 W data_start
+08048330 t deregister_tm_clones
+080483a0 t __do_global_dtors_aux
+08049f0c t __do_global_dtors_aux_fini_array_entry
+0804a018 D __dso_handle
+08049f14 d _DYNAMIC
+0804a040 D _edata
+0804a044 B _end
+
+
+file:
+识别文件类型以及编码格式
+例如：
+file lab1-ex0.s
+lab1-ex0.s: assembler source, ASCII text 得到lab1-ex0.s的文件类型为汇编代码，编码方式为ascii
+再例如：
+file lab1-ex0.out
+lab1-ex0.out: ELF 32-bit LSB executable, Intel 80386, version 1 (SYSV), dynamically linked, interpreter /lib/ld-linux.so.2, for GNU/Linux 2.6.32, BuildID[sha1]=5b20e6a04020d11c4d1c08bac3127a8e0552271f, not stripped 可知lab1-ex0.out为32位可执行程序，使用动态链接等信息。
+
+
+
+
+
+
+
+
+
+
+
