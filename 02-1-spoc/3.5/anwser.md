@@ -91,7 +91,7 @@ tf->tf_regs.reg_eax = syscalls[num](arg);
 
 
 4. 以ucore lab8的answer为例，尝试修改并运行ucore OS kernel代码，使其具有类似Linux应用工具`strace`的功能，即能够显示出应用程序发出的系统调用，从而可以分析ucore应用的系统调用执行过程。
-
+在内核态的syscall函数中（kern/syscall.c）使用cprinf输出调用号（num）即可
 
 
 
