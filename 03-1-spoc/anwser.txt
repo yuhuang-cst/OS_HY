@@ -1,0 +1,9 @@
+在os4.c中加入以下代码，复制第一题的实现即可。（不知道是不是这样做）
+
+void *heap_ptr = 0x2000000;
+
+void *sbrk(int inc)
+{
+  heap_ptr += inc;
+  return heap_ptr;
+}
