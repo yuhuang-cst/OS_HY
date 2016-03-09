@@ -10,3 +10,4 @@ Virtual Address 6b22:
     --> pde index:0x1a  pde contents:(valid 1, pfn 0x52)
         --> pte index:0x19  pte contents:(valid 1, pfn 0x47)
             --> Translates to Physical Address 0x8e2 --> Value: 1a
+  
