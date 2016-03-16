@@ -1,0 +1,25 @@
+Virtual Address: 6653
+--> pde index:0x19 pde contents:(valid 0, pfn 0x7f)
+    --> pte index:0x12 pte contents:(valid 0, pfn 0xa)
+        --> To Disk Sector Address 0x153 --> Value: 0x0
+
+Virtual Address: 1c13
+--> pde index:0x7 pde contents:(valid 1, pfn 0x3d)
+    --> pte index:0x0 pte contents:(valid 1, pfn 0x76)
+        --> To Physical Address 0xed3 --> Value: 0x12
+ 
+Virtual Address: 6890
+--> pde index:0x1a pde contents:(valid 0, pfn 0x7f)
+    --> pte index:0x4 pte contents:(valid 0, pfn 0x15)
+        --> To Disk Sector Address 0x2b0 --> Value: 0x0
+
+Virtual Address: 0af6
+--> pde index:0x2 pde contents:(valid 1, pfn 0x21)
+    --> pte index:0x17 pte contents:(valid 0, pfn 0x7f)
+        --> Fault (value not found)
+
+Virtual Address: 1e6f
+--> pde index:0x7 pde contents:(valid 1, pfn 0x3d)
+    --> pte index:0x13 pte contents:(valid 0, pfn 0x16)
+        --> To Disk Sector Address 0x2cf --> Value: 0x1c
+ 
