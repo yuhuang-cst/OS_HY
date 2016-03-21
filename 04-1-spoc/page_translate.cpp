@@ -64,18 +64,14 @@ int main()
 
 	unsigned char pde = memory[PDBR + pde_index];
 	int pt_base = pde & 127;
-	int pde_valid = pde / 128;
-	cout << "--> pde index:0x" << hex << pde_index << " pde contents:(valid " << pde_valid << ", pfn 0x" << hex << pt_base << ")" << endl;
-	
-	unsigned char pte;
-	if (pde_valid) 
-		pte = memory[PAGE_SIZE * pt_base + pte_index];
-	else if (pte_index != 0x7f)
-		pte = disk[SECTOR_SIZE * pt_base + pte_index];
+	if (pde / 128)
+		cout << "--> pde index:0x" << hex << pde_index << " pde contents:(valid " << 1 << ", pfn 0x" << hex << pt_base << ")" << endl;
 	else{
-		cout << "        " << "--> Fault (pte not found)" << endl;
+		cout << "--> Fault (pte not found)" << endl;
 		return 0;
 	}
+	
+	unsigned char pte = memory[PAGE_SIZE * pt_base + pte_index];
 	int page_num = pte & 127;
 	int pte_valid = pte / 128;
 	cout << "    " << "--> pte index:0x" << hex << pte_index << " pte contents:(valid " << pte_valid << ", pfn 0x" << hex << page_num << ")" << endl;

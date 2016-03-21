@@ -217,5 +217,17 @@ main()
   *(int *)(4) = *(int *)(USRSTART);
   printf("..%d, .user ok 1 \n",  *(int *)(4));  
 
+
+
+
+
+  asm(LL, USER);
+  asm(PSHA);
+  asm(LL, 0);
+  asm(PSHA);
+  asm(PSHA);
+  asm(RTI);
+  *(int *)(4) = *(int *)(USRSTART);
+
   halt(0);
 }
