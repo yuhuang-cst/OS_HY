@@ -6,10 +6,11 @@
 *   MLFQ
 
 命令分别为：
-./scheduler-homework.py  -p FIFO
-./scheduler-homework.py  -p SJF
-./scheduler-homework.py  -p RR
-./scheduler-homework.py  -p MLFQ
+
+*	./scheduler-homework.py  -p FIFO
+*	./scheduler-homework.py  -p SJF
+*	./scheduler-homework.py  -p RR
+*	./scheduler-homework.py  -p MLFQ
 
 注：本程序将job均视为cpu密集型程序，未考虑IO
 
