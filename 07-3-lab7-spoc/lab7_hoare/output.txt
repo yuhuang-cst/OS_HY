@@ -1,0 +1,74 @@
+hy@hy-virtual-machine:~/work/OS/ucore_os_lab_github/ucore_os_lab/labcodes/lab7$ make grade
+badsegment:              (3.9s)
+  -check result:                             OK
+  -check output:                             OK
+divzero:                 (4.0s)
+  -check result:                             OK
+  -check output:                             OK
+softint:                 (3.6s)
+  -check result:                             OK
+  -check output:                             OK
+faultread:               (2.2s)
+  -check result:                             OK
+  -check output:                             OK
+faultreadkernel:         (2.0s)
+  -check result:                             WRONG
+   -e !! error: missing 'kernel_execve: pid = ., name = "faultreadkernel".*'
+   !! error: missing '  err  0x00000005'
+
+  -check output:                             OK
+hello:                   (3.9s)
+  -check result:                             OK
+  -check output:                             OK
+testbss:                 (2.6s)
+  -check result:                             WRONG
+   -e !! error: missing 'Yes, good.  Now doing a wild write off the end...'
+
+  -check output:                             OK
+pgdir:                   (2.2s)
+  -check result:                             WRONG
+   -e !! error: missing 'kernel_execve: pid = ., name = "pgdir".*'
+   !! error: missing 'PDE(001) 00800000-00c00000 00400000 urw'
+   !! error: missing '  |-- PTE(00002) 00800000-00802000 00002000 ur-'
+   !! error: missing '  |-- PTE(00001) 00802000-00803000 00001000 urw'
+   !! error: missing 'PDE(001) afc00000-b0000000 00400000 urw'
+   !! error: missing '  |-- PTE(00004) afffc000-b0000000 00004000 urw'
+   !! error: missing 'pgdir pass.'
+
+  -check output:                             OK
+yield:                   (3.7s)
+  -check result:                             OK
+  -check output:                             OK
+badarg:                  (3.5s)
+  -check result:                             OK
+  -check output:                             OK
+exit:                    (3.6s)
+  -check result:                             OK
+  -check output:                             OK
+spin:                    (3.8s)
+  -check result:                             OK
+  -check output:                             OK
+waitkill:                (4.0s)
+  -check result:                             OK
+  -check output:                             OK
+forktest:                (3.9s)
+  -check result:                             OK
+  -check output:                             OK
+forktree:                (3.8s)
+  -check result:                             OK
+  -check output:                             OK
+priority:                (15.9s)
+  -check result:                             OK
+  -check output:                             OK
+sleep:                   (12.0s)
+  -check result:                             OK
+  -check output:                             OK
+sleepkill:               (3.7s)
+  -check result:                             OK
+  -check output:                             OK
+matrix:                  (12.5s)
+  -check result:                             OK
+  -check output:                             OK
+Total Score: 169/190
+Makefile:314: recipe for target 'grade' failed
+make: *** [grade] Error 1
