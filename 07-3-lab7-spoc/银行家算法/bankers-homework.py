@@ -55,6 +55,7 @@ class Bankers(object):
             self.allocated[index][i] -= self.need[index][i]
             self.avaliable[i] -= self.need[index][i]
             self.need[index][i] = 0
+        return True
         #allocating END here
         pass
 
@@ -64,11 +65,11 @@ class Bankers(object):
         # YOUR CODE, 2013011363
         allTrue = True
         for i in range(0, len(self.need)):
-            if not self.finished[i]: #找到一个未finish的进程
+            if not self.finished[i]: 
                 allTrue = False
                 safe = True
-                for j in range(0, self.need[i]):
-                    if self.need[i][j] > self.available[j]:
+                for j in range(0, len(self.need[i])):
+                    if self.need[i][j] > self.avaliable[j]:
                         sage = False
                         break
                 if safe:
