@@ -48,7 +48,7 @@ class Bankers(object):
             if self.avaliable[i] < self.need[index][i]:
                 return False
         #check END here
-        
+
         #allocating what they need.
         # YOUR CODE, 2013011363
         for i in range(0, len(self.need[index])):
@@ -62,9 +62,21 @@ class Bankers(object):
         #check if at least one request can be done after previous process done. not check whole sequances.
         #if every element of Requests can't accepted after previous process done, this mean it is not safe state
         # YOUR CODE, 2013011363
-        
+        allTrue = True
+        for i in range(0, len(self.need)):
+            if not self.finished[i]: #找到一个未finish的进程
+                allTrue = False
+                safe = True
+                for j in range(0, self.need[i]):
+                    if self.need[i][j] > self.available[j]:
+                        sage = False
+                        break
+                if safe:
+                    return True
+        if allTrue:
+            return True
+        return False
         #check END here
-        pass
 
     def print_matrixes(self):
         print "_____________________________________________"
