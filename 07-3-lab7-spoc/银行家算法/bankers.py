@@ -41,44 +41,44 @@ class Bankers(object):
         return res
 
     def ExecuteProcess(self,index):
+
         #check if less avaliable than Request
-        # YOUR CODE, 2013011363
-        for i in range(0, len(self.need[index])):
-            if self.avaliable[i] < self.need[index][i]:
-                return False
+        # 2013011408
+        for i in range(len(self.need[index])):
+            if self.need[index][i] > self.avaliable[i]:
+                return 0
         #check END here
 
         #allocating what they need.
-        # YOUR CODE, 2013011363
-        for i in range(0, len(self.need[index])):
-            self.allocated[index][i] -= self.need[index][i]
-            self.avaliable[i] -= self.need[index][i]
+        # 2013011408
+        for i in range(len(self.need[index])):
+            self.allocated[index][i] += self.need[index][i]
             self.need[index][i] = 0
-        return True
+        self.avaliable = self.CalcAvaliable()
+        return 1
         #allocating END here
         pass
 
     def TempSafeCheckAfterRelease(self):
         #check if at least one request can be done after previous process done. not check whole sequances.
         #if every element of Requests can't accepted after previous process done, this mean it is not safe state
-        # YOUR CODE, 2013011363
-
-
-        allTrue = True
-        for i in range(0, len(self.need)):
-            if not self.finished[i]: 
-                allTrue = False
-                safe = True
-                for j in range(0, len(self.need[i])):
-                    if self.need[i][j] > self.avaliable[j]:
-                        sage = False
-                        break
-                if safe:
-                    return True
-        if allTrue:
-            return True
-        return False
+        # 2013011408
+        count = 0
+        for i in range(len(self.need)):
+            if self.finished[i]:
+                count += 1
+                continue
+            b = 1
+            for j in range(len(self.need[0])):
+                if self.need[i][j] > self.avaliable[j]:
+                    b = 0
+            if b == 1:
+                return 1
+        if count == len(self.need):
+            return 1
+        return 0
         #check END here
+        pass
 
     def print_matrixes(self):
         print "_____________________________________________"
