@@ -1,0 +1,72 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+DEBUG	sfs-homework.py	/^DEBUG = False$/;"	v
+OptionParser	sfs-homework.py	/^from optparse import OptionParser$/;"	i
+__init__	sfs-homework.py	/^    def __init__(self, ftype):$/;"	m	class:block
+__init__	sfs-homework.py	/^    def __init__(self, ftype='free', addr=-1, refCnt=1):$/;"	m	class:inode
+__init__	sfs-homework.py	/^    def __init__(self, numInodes, numData):$/;"	m	class:fs
+__init__	sfs-homework.py	/^    def __init__(self, size):$/;"	m	class:bitmap
+addData	sfs-homework.py	/^    def addData(self, data):$/;"	m	class:block
+addDirEntry	sfs-homework.py	/^    def addDirEntry(self, name, inum):$/;"	m	class:block
+addSoftLink	sfs-homework.py	/^    def addSoftLink(self, tinum):$/;"	m	class:block
+alloc	sfs-homework.py	/^    def alloc(self):$/;"	m	class:bitmap
+bitmap	sfs-homework.py	/^class bitmap:$/;"	c
+block	sfs-homework.py	/^class block:$/;"	c
+createFile	sfs-homework.py	/^    def createFile(self, parent, newfile, ftype):$/;"	m	class:fs
+createLink	sfs-homework.py	/^    def createLink(self, target, newfile, parent):$/;"	m	class:fs
+createSoftLink	sfs-homework.py	/^    def createSoftLink(self, target, newfile, parent):$/;"	m	class:fs
+dataAlloc	sfs-homework.py	/^    def dataAlloc(self):$/;"	m	class:fs
+dataFree	sfs-homework.py	/^    def dataFree(self, bnum):$/;"	m	class:fs
+decRefCnt	sfs-homework.py	/^    def decRefCnt(self):$/;"	m	class:inode
+delDirEntry	sfs-homework.py	/^    def delDirEntry(self, name):$/;"	m	class:block
+deleteFile	sfs-homework.py	/^    def deleteFile(self, tfile):$/;"	m	class:fs
+dirEntryExists	sfs-homework.py	/^    def dirEntryExists(self, name):$/;"	m	class:block
+doAppend	sfs-homework.py	/^    def doAppend(self):$/;"	m	class:fs
+doCreate	sfs-homework.py	/^    def doCreate(self, ftype):$/;"	m	class:fs
+doDelete	sfs-homework.py	/^    def doDelete(self):$/;"	m	class:fs
+doLink	sfs-homework.py	/^    def doLink(self):$/;"	m	class:fs
+dprint	sfs-homework.py	/^def dprint(str):$/;"	f
+dump	sfs-homework.py	/^    def dump(self):$/;"	m	class:bitmap
+dump	sfs-homework.py	/^    def dump(self):$/;"	m	class:block
+dump	sfs-homework.py	/^    def dump(self):$/;"	m	class:fs
+f	sfs-homework.py	/^f = fs(options.numInodes, options.numData)$/;"	v
+free	sfs-homework.py	/^    def free(self):$/;"	m	class:block
+free	sfs-homework.py	/^    def free(self):$/;"	m	class:inode
+free	sfs-homework.py	/^    def free(self, num):$/;"	m	class:bitmap
+fs	sfs-homework.py	/^class fs:$/;"	c
+getAddr	sfs-homework.py	/^    def getAddr(self):$/;"	m	class:inode
+getEntry	sfs-homework.py	/^    def getEntry(self, num):$/;"	m	class:block
+getFreeEntries	sfs-homework.py	/^    def getFreeEntries(self):$/;"	m	class:block
+getNumEntries	sfs-homework.py	/^    def getNumEntries(self):$/;"	m	class:block
+getParent	sfs-homework.py	/^    def getParent(self, name):$/;"	m	class:fs
+getRefCnt	sfs-homework.py	/^    def getRefCnt(self):$/;"	m	class:inode
+getSize	sfs-homework.py	/^    def getSize(self):$/;"	m	class:inode
+getType	sfs-homework.py	/^    def getType(self):$/;"	m	class:inode
+incRefCnt	sfs-homework.py	/^    def incRefCnt(self):$/;"	m	class:inode
+inode	sfs-homework.py	/^class inode:$/;"	c
+inodeAlloc	sfs-homework.py	/^    def inodeAlloc(self):$/;"	m	class:fs
+inodeFree	sfs-homework.py	/^    def inodeFree(self, inum):$/;"	m	class:fs
+makeName	sfs-homework.py	/^    def makeName(self):$/;"	m	class:fs
+markAllocated	sfs-homework.py	/^    def markAllocated(self, num):$/;"	m	class:bitmap
+parser	sfs-homework.py	/^parser = OptionParser()$/;"	v
+printFinal	sfs-homework.py	/^printFinal    = True$/;"	v
+printFinal	sfs-homework.py	/^printFinal = options.printFinal$/;"	v
+printOps	sfs-homework.py	/^    printOps   = False$/;"	v
+printOps	sfs-homework.py	/^    printOps   = True$/;"	v	class:fs
+printOps	sfs-homework.py	/^printOps      = True$/;"	v
+printOps	sfs-homework.py	/^printOps   = True$/;"	v
+printState	sfs-homework.py	/^    printState = False$/;"	v	class:fs
+printState	sfs-homework.py	/^    printState = True$/;"	v
+printState	sfs-homework.py	/^printState    = True$/;"	v
+printState	sfs-homework.py	/^printState = True$/;"	v
+random	sfs-homework.py	/^import random$/;"	i
+run	sfs-homework.py	/^    def run(self, numRequests):$/;"	m	class:fs
+setAddr	sfs-homework.py	/^    def setAddr(self, block):$/;"	m	class:inode
+setAll	sfs-homework.py	/^    def setAll(self, ftype, addr, refCnt):$/;"	m	class:inode
+setType	sfs-homework.py	/^    def setType(self, ftype):$/;"	m	class:block
+setType	sfs-homework.py	/^    def setType(self, ftype):$/;"	m	class:inode
+writeFile	sfs-homework.py	/^    def writeFile(self, tfile, data):$/;"	m	class:fs
